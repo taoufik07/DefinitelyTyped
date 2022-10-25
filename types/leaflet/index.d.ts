@@ -294,7 +294,11 @@ export type LocationEventHandlerFn = (event: LocationEvent) => void;
 
 export type LeafletMouseEventHandlerFn = (event: LeafletMouseEvent) => void;
 
+export type LeafletMouseWheelEventHandlerFn = (event: WheelEvent) => void;
+
 export type LeafletKeyboardEventHandlerFn = (event: LeafletKeyboardEvent) => void;
+
+export type LeafletTouchEventHandlerFn = (event: TouchEvent) => void;
 
 export type ZoomAnimEventHandlerFn = (event: ZoomAnimEvent) => void;
 
@@ -355,9 +359,16 @@ export interface LeafletEventHandlerFnMap {
     contextmenu?: LeafletMouseEventHandlerFn | undefined;
     preclick?: LeafletMouseEventHandlerFn | undefined;
 
+    wheel?: LeafletMouseWheelEventHandlerFn | undefined;
+
     keypress?: LeafletKeyboardEventHandlerFn | undefined;
     keydown?: LeafletKeyboardEventHandlerFn | undefined;
     keyup?: LeafletKeyboardEventHandlerFn | undefined;
+
+    touchstart?: LeafletTouchEventHandlerFn | undefined;
+    touchmove?: LeafletTouchEventHandlerFn | undefined;
+    touchend?: LeafletTouchEventHandlerFn | undefined;
+    touchcancel?: LeafletTouchEventHandlerFn | undefined;
 
     zoomanim?: ZoomAnimEventHandlerFn | undefined;
 
